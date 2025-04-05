@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.cardview.widget.CardView
+        style="@style/list_card_view_style"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <LinearLayout
+            android:id="@+id/llHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Kanha Restro"
+                    android:textSize="@dimen/sp_16"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:visibility="gone"
+                    android:textColor="@color/textPrimary"
+                    android:singleLine="true"
+                    android:text="136- Shivraj Niketan Colony, Jaipur, Rajasthan-302020"
+                    android:textSize="@dimen/sp_14"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textSize="@dimen/sp_16"
+                    android:text="Rs.235.00"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_16"
+                    android:text="Amritsari Naan x 1, Paneer Tikka x 1"
+                    android:textColor="@color/colorPrimary"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textColor="@color/textPrimary"
+                    android:text="September 13, 9:20 PM"
+                    android:textSize="@dimen/sp_14"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/retry_alert_bg"
+            android:orientation="vertical"
+
+            android:padding="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <in.kpis.afoozo.custome.TextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/offer_unlocked"
+                    android:textSize="@dimen/sp_20"
+                    android:textColor="@color/colorPrimary"/>
+
+                <ImageView
+                    android:id="@+id/imvOffer"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_margin="@dimen/_10sdp"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtDiscountMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/textPrimary"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnSkip"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_margin="@dimen/dp_5"
+                        android:background="@color/black"
+                        android:layout_weight="1"
+                        android:text="@string/skip"
+                        android:textColor="@color/colorAccent"/>
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnAddMore"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_margin="@dimen/dp_5"
+                        android:background="@color/black"
+                        android:layout_weight="1"
+                        android:text="@string/add_more"
+                        android:textColor="@color/colorAccent"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

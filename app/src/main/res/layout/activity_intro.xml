@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/login_bg"
+        tools:context=".activity.IntroActi">
+
+<!--        <include layout="@layout/toolbar"-->
+<!--            android:id="@+id/toolbar"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dp_0"-->
+<!--            android:layout_weight="1">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/dp_50"-->
+<!--                android:src="@drawable/logo"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="@dimen/dp_20"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                style="@style/intro_screen_layout_style"-->
+<!--                android:background="@drawable/fb_rounded_corner_bg"-->
+<!--                android:onClick="facebookClick"-->
+<!--                android:clickable="true">-->
+
+<!--                <ImageView-->
+<!--                    style="@style/intro_image_view_style"-->
+<!--                    android:src="@drawable/ic_facebook"/>-->
+
+<!--                <View-->
+<!--                    style="@style/intro_vertical_view_style"/>-->
+
+<!--                <in.kpis.afoozo.custome.TextViewRegular-->
+<!--                    style="@style/intro_text_view_style"-->
+<!--                    android:text="@string/continue_with_facebook" />-->
+
+<!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+<!--            <com.facebook.login.widget.LoginButton-->
+<!--                android:id="@+id/login_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:layout_marginBottom="30dp" />-->
+
+
+<!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                style="@style/intro_screen_layout_style"-->
+<!--                android:onClick="loginWithMobile"-->
+<!--                android:layout_marginBottom="@dimen/dp_50"-->
+<!--                android:clickable="true"-->
+<!--                android:background="@drawable/red_rounded_corner_bg">-->
+
+<!--                <ImageView-->
+<!--                    style="@style/intro_image_view_style"-->
+<!--                    android:src="@drawable/ic_mobile"-->
+<!--                    android:clickable="false"/>-->
+
+<!--                <View-->
+<!--                    style="@style/intro_vertical_view_style"-->
+<!--                    android:clickable="false"/>-->
+
+<!--                <in.kpis.afoozo.custome.TextViewRegular-->
+<!--                    style="@style/intro_text_view_style"-->
+<!--                    android:text="@string/continue_with_mobile"-->
+<!--                    android:clickable="false"/>-->
+
+
+<!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+<!--            <LinearLayout-->
+<!--                style="@style/intro_screen_layout_style"-->
+<!--                android:layout_marginBottom="@dimen/dp_50"-->
+<!--                android:onClick="loginWithEmail"-->
+<!--                android:visibility="gone"-->
+<!--                android:background="@drawable/grey_rounded_corner_bg">-->
+
+<!--                <ImageView-->
+<!--                    style="@style/intro_image_view_style"-->
+<!--                    android:src="@drawable/ic_email"/>-->
+
+<!--                <View-->
+<!--                    style="@style/intro_vertical_view_style"/>-->
+
+<!--                <in.kpis.afoozo.custome.TextViewRegular-->
+<!--                    style="@style/intro_text_view_style"-->
+<!--                    android:text="@string/continue_with_email" />-->
+
+<!--            </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<in.kpis.afoozo.custome.TextViewRegular xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?android:attr/textViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_20sdp"
+    android:textSize="@dimen/sp_16"
+    android:gravity="center_vertical"
+    android:textColor="@color/colorPrimary"
+    android:textAlignment="inherit"
+    android:textAppearance="?android:attr/textAppearanceMedium">
+
+</in.kpis.afoozo.custome.TextViewRegular>

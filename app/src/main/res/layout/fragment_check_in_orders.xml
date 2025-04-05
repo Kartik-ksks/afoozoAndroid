@@ -1,0 +1,28 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="in.kpis.afoozo.fragment.Check_in_ordersFrag">
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rvLive"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+
+    <in.kpis.afoozo.custome.TextViewRegular
+        android:visibility="gone"
+        android:id="@+id/txtNoOrder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/no_order"/>
+
+</LinearLayout>
+</layout>

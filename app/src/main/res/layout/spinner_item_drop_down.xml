@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<in.kpis.afoozo.custome.TextViewRegular xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?android:attr/textViewStyle"
+    android:layout_width="match_parent"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp"
+    android:layout_height="@dimen/_30sdp"
+    android:textSize="@dimen/_14sdp"
+    android:gravity="center_vertical"
+    android:textColor="@color/colorPrimary"
+    android:textAlignment="inherit"
+    android:textAppearance="?android:attr/textAppearanceMedium">
+
+</in.kpis.afoozo.custome.TextViewRegular>

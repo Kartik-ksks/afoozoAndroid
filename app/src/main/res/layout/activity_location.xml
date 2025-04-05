@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.LocationActi">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_location_circle" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llAddressBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/room_flatno"
+                android:textColor="@color/textPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <in.kpis.afoozo.custome.EditTextViewRegular
+                    android:id="@+id/etCompleteAdd"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/room_flatno"
+                    android:singleLine="true" />
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/imvRemove"-->
+                <!--                    android:layout_width="@dimen/_25sdp"-->
+                <!--                    android:layout_height="@dimen/_25sdp"-->
+                <!--                    android:padding="@dimen/_5sdp"-->
+                <!--                    android:src="@drawable/ic_close"/>-->
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/Grey_300" />
+
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/building_name"
+                android:textColor="@color/textPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <in.kpis.afoozo.custome.EditTextViewRegular
+                    android:id="@+id/etBuldingName"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/building_name"
+                    android:singleLine="true" />
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/imvRemove"-->
+                <!--                    android:layout_width="@dimen/_25sdp"-->
+                <!--                    android:layout_height="@dimen/_25sdp"-->
+                <!--                    android:padding="@dimen/_5sdp"-->
+                <!--                    android:src="@drawable/ic_close"/>-->
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/Grey_300" />
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/your_location"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/sp_16" />
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_checked_circle"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:onClick="searchAddress"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textColor="@color/black" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/Grey_300" />
+
+            <LinearLayout
+                android:id="@+id/llAddressType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/llHome"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/color_primary_rounded_bg"
+                    android:gravity="center"
+                    android:onClick="setHomeType"
+                    android:text="@string/home"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+
+                    <ImageView
+                        android:id="@+id/imvHome"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:src="@drawable/ic_checked_white"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llWork"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/color_primary_rounded_border"
+                    android:gravity="center"
+                    android:onClick="setWorkType"
+                    android:text="@string/work"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtWork"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/work"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12" />
+
+                    <ImageView
+                        android:id="@+id/imvWork"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:src="@drawable/ic_checked_white"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llOther"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/color_primary_rounded_border"
+                    android:gravity="center"
+                    android:onClick="setOtherType"
+                    android:text="@string/other"
+                    android:textAllCaps="false">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/other"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12" />
+
+                    <ImageView
+                        android:id="@+id/imvOther"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:src="@drawable/ic_checked_white"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llNickName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/Grey_300" />
+
+
+                <in.kpis.afoozo.custome.EditTextViewRegular
+                    android:id="@+id/etNickName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@null"
+                    android:hint="@string/enter_a_nickname"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/textPrimary"
+                    android:textSize="@dimen/sp_14" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/Grey_300" />
+
+
+            </LinearLayout>
+
+            <in.kpis.afoozo.custome.ButtonViewRegular
+                style="@style/color_primary_button_style"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:onClick="saveProcess"
+                android:text="@string/save_and_proceed" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

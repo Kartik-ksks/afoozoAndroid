@@ -1,0 +1,3 @@
+include ':app', ':razorpay-android-3.8.8'
+rootProject.name='Afoozo'
+include ':code-scanner'

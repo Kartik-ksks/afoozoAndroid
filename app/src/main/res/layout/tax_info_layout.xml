@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:background="@color/white">
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtPopHeading"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:text="@string/taxes"
+                android:textSize="@dimen/sp_16" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTaxes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"/>
+
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtInfoClose"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:gravity="center"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/red"
+                android:textAlignment="center"
+                android:text="@string/closed"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

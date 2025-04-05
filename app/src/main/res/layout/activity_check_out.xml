@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="in.kpis.afoozo.activity.CheckOutActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                style="@style/login_signup_edit_text_view_style"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <Spinner
+                    android:id="@+id/spinnerMultiSelect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llRoomAvailability "
+                style="@style/login_signup_edit_text_view_style"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <Spinner
+                    android:id="@+id/spinnerRoomList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llDatePickerOpen"
+                style="@style/login_signup_edit_text_view_style"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtStartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_calendar"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:src="@drawable/ic_arrow_down_sign_to_navigate" />
+
+                <!--        <Spinner-->
+                <!--            android:id="@+id/spinnerCheckIn"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:minHeight="@dimen/sp_18"-->
+                <!--            android:visibility="visible" />-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llDatePickerClose"
+                style="@style/login_signup_edit_text_view_style"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_calendar"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:src="@drawable/ic_arrow_down_sign_to_navigate" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+        <in.kpis.afoozo.custome.ButtonViewRegular
+            android:id="@+id/onProcess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            android:text="@string/btn_proceed"
+            android:textColor="@color/colorLogo" />
+
+    </LinearLayout>
+</layout>

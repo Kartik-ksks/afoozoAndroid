@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+    </data>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.CardActi">
+
+        <include layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <in.kpis.afoozo.custome.TextViewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/we_accept_all_credit_and_debit"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/black"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:hintEnabled="true">
+
+                    <in.kpis.afoozo.custome.EditTextViewRegular
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name_on_card"
+                        android:textSize="@dimen/sp_16"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/colorPrimary"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    app:hintEnabled="true">
+
+                    <in.kpis.afoozo.custome.EditTextViewRegular
+                        android:id="@+id/etCardNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/card_number"
+                        android:inputType="number"
+                        android:maxLength="19"
+                        android:drawableRight="@drawable/ic_card"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/colorPrimary"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilExpiry"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        app:errorEnabled="true"
+                        app:hintEnabled="true">
+
+                        <in.kpis.afoozo.custome.EditTextViewRegular
+                            android:id="@+id/etExpiryDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/expiry_date_mm_yy"
+                            android:maxLength="5"
+                            android:textSize="@dimen/sp_16"
+                            android:inputType="number"
+                            android:textColor="@color/colorPrimary"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        app:hintEnabled="true">
+
+                        <in.kpis.afoozo.custome.EditTextViewRegular
+                            android:id="@+id/etCVV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cvv"
+                            android:inputType="numberPassword"
+                            android:maxLength="4"
+                            android:textSize="@dimen/sp_16"
+                            android:textColor="@color/colorPrimary"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/nickname_for_card"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtPersonal"
+                        style="@style/nickname_text_view_style"
+                        android:onClick="setPersonal"
+                        android:text="@string/personal" />
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtBusiness"
+                        style="@style/nickname_text_view_style"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:onClick="setBusiness"
+                        android:text="@string/business" />
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtOther"
+                        style="@style/nickname_text_view_style"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:onClick="setOther"
+                        android:text="@string/other" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilNickName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:hintEnabled="true">
+
+                    <in.kpis.afoozo.custome.EditTextViewRegular
+                        android:id="@+id/etNickName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_a_nickname_eg"
+                        android:textSize="@dimen/sp_16"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/colorPrimary"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/save_your_card_details_securely"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <in.kpis.afoozo.custome.ButtonViewRegular
+                android:id="@+id/btnAddCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:onClick="cardSaveProcess"
+                android:background="@drawable/yellow_rounded_btn_bg"
+                android:textColor="@color/white"
+                android:text="@string/add_card"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+<!--    <color name="colorAccent">#F6B547</color>-->
+    <color name="colorAccent">#F6B547</color>
+    <color name="colorLogo">#F6B547</color>
+    <color name="colorAccentLight">#fff44f</color>
+    <color name="colorAccentTransparent">#33F6B547</color>
+    <color name="snap_chat_color">#fffc00</color>
+
+    <color name="textPrimary">#8e9cab</color>
+    <color name="email_color">#5d6682</color>
+    <color name="mobile_color">#f55d0a</color>
+    <color name="facebook_color">#3371ff</color>
+    <color name="drawer_header_color">#e8faff</color>
+
+    <color name="rewards_bg_color">#FFDCD3</color>
+
+    <color name="popular_bottom">#fecd75</color>
+    <color name="popular_top">#ffc6b6</color>
+
+    <color name="profileRounded">#7AEBD6</color>
+
+    <color name="google_color">#f55d0a</color>
+    <color name="call_btn_color">#20AEB0</color>
+
+    <color name="intro_bg">#F9F8F9</color>
+
+    <color name="placeholder_bg">#dddddd</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="light_gray">#EEEEEE</color>
+    <color name="photo_fragment_gray">#EEEEEE</color>
+    <color name="app_bg">#f3f7fb</color>
+
+    <color name="divider_color">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="toolbar_bg">@color/black</color>
+    <color name="light_black">#8C000000</color>
+    <color name="btn_bg">#ffcc1b</color>
+    <color name="gray">#8C8885</color>
+    <color name="blue">#0000ff</color>
+    <color name="dark_gray">#424242</color>
+    <color name="gray_font">#666</color>
+    <color name="green">#2AB61F</color>
+    <color name="light_green">#76FF03</color>
+    <color name="lightest_green">#CCFF90</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="purple">#9C27B0</color>
+    <color name="light_yellow">#FFF176</color>
+    <color name="light_orange">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="attempt1">#00000000</color>
+    <color name="pink">#B80CD2</color>
+    <color name="transparent">#00000000</color>
+    <color name="semi_transpaent">#55000000</color>
+    <color name="black_transparent">#AA000000</color>
+    <color name="platinum">#FBECCE</color>
+    <color name="gold">#FAEA93</color>
+    <color name="silver">#DDDDDD</color>
+    <color name="light_transparent">#11000000</color>
+
+    <color name="galleryCurrentItemOverlay">@android:color/transparent</color>
+    <color name="galleryItemOverlay">#55000000</color>
+
+    <!-- Grey-->
+    <color name="Grey_50">#FAFAFA</color>
+    <color name="Grey_100">#F5F5F5</color>
+    <color name="Grey_200">#EEEEEE</color>
+    <color name="Grey_300">#E0E0E0</color>
+    <color name="Grey_400">#BDBDBD</color>
+    <color name="Grey_500">#9E9E9E</color>
+    <color name="Grey_600">#757575</color>
+    <color name="Grey_700">#616161</color>
+    <color name="Grey_800">#424242</color>
+    <color name="Grey_900">#212121</color>
+    <color name="sky_blue">#03A9F4</color>
+
+
+    <color name="color1">#4CAF50</color>
+    <color name="color2">#8BC34A</color>
+    <color name="color3">#A69926</color>
+    <color name="color4">#FFEB3B</color>
+    <color name="color5">#FFC107</color>
+    <color name="color6">#FF5722</color>
+    <color name="color7">#FF9800</color>
+
+    <color name="black_overlay">#66000000</color>
+</resources>

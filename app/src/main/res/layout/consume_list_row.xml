@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.cardview.widget.CardView
+        style="@style/list_card_view_style"
+        android:layout_height="@dimen/_160sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Grover Wine"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/black"/>
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtValidTill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="@dimen/sp_10"
+                android:textColor="@color/textPrimary"
+                android:text="@string/valid_till"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imvBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:id="@+id/imvItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"/>
+
+                <ProgressBar
+                    android:id="@+id/pbItem"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/imvGift"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_margin="@dimen/dp_5"
+                    android:translationZ="@dimen/dp_10"
+                    android:src="@drawable/ic_gift"
+                    android:layout_alignParentRight="true"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/semi_transpaent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_5">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/remaining"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10"/>
+
+                    <in.kpis.afoozo.custome.TextViewBold
+                        android:id="@+id/txtQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/remaining"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtConsumeAfter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textSize="@dimen/sp_10"
+                        android:textColor="@color/white"
+                        android:text="@string/valid_till"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

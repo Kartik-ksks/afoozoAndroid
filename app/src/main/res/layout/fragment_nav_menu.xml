@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/drawer_header_color"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relProfileSideBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60">
+
+                    <in.kpis.afoozo.custome.CircleImageView
+                        android:id="@+id/imvUserImage"
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_centerInParent="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/profile_thumb" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <in.kpis.afoozo.custome.TextViewBold
+                            android:id="@+id/txtUsername"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16"
+                            android:text="Hemant Kumar Jangid" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@drawable/ic_qr_code"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@drawable/ic_right_arrow_angle"/>
+
+                    </LinearLayout>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textPrimary"
+                        android:layout_marginTop="@dimen/dp_5" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNavMenuList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <in.kpis.afoozo.custome.ButtonViewRegular
+            android:id="@+id/btnLogout"
+            style="@style/login_signup_button_style"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:text="@string/logout"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_logout"/>
+
+    </LinearLayout>
+
+</layout>

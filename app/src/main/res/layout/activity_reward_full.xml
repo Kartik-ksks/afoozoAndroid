@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="isScratched"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black_transparent"
+        tools:context=".activity.RewardFullActi">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_margin="@dimen/dp_10"
+            android:onClick="goToPreviousScreen"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_close_white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="@dimen/_220sdp"
+                android:transitionName="Reward"
+                android:layout_marginTop="@dimen/_60sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/dp_10"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:textAlignment="center"
+                            android:singleLine="true"
+                            android:visibility="gone"
+                            android:textSize="@dimen/sp_18"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:padding="@dimen/dp_15"
+                            android:background="@drawable/reward_image_bg"
+                            android:src="@drawable/ic_reward"/>
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:textAlignment="center"
+                            android:maxLines="2"
+                            android:textSize="@dimen/sp_20"
+                            android:textColor="@color/colorPrimary"/>
+
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtCouponCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:background="@drawable/coupon_code_bg"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:visibility="@{isScratched ? View.VISIBLE : View.GONE}"
+                            android:singleLine="true"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16" />
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtValidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:textAlignment="center"
+                            android:visibility="gone"
+                            android:textSize="@dimen/sp_16"
+                            android:textColor="@color/colorPrimary"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imvScratch"
+                        android:layout_width="@dimen/dp_180"
+                        android:layout_height="@dimen/dp_180"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        android:src="@drawable/scratch" />
+
+                    <com.anupkumarpanwar.scratchview.ScratchView
+                        android:id="@+id/scratchView"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="@dimen/_220sdp"
+                        app:overlay_image="@drawable/scratch"
+                        android:visibility="@{isScratched ? View.GONE : View.VISIBLE}"
+                        android:layout_centerInParent="true"
+                        app:overlay_width="@dimen/_220sdp"
+                        app:overlay_height="@dimen/_220sdp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/scratch_and_win"
+                        android:textSize="@dimen/sp_18"
+                        android:textColor="@color/black"/>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:visibility="@{isScratched? View.VISIBLE : View.GONE}"
+                        android:text="@string/terms_and_conditions"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCopy"
+            style="@style/login_signup_button_style"
+            android:background="@drawable/color_accent_rounded_btn_bg"
+            android:layout_margin="@dimen/_20sdp"
+            android:text="@string/copy"
+            android:onClick="copyCode"
+            android:visibility="@{isScratched? View.VISIBLE : View.GONE}"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+
+        <LinearLayout
+            android:id="@+id/llWin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imvWin1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1"
+                android:translationZ="@dimen/_10sdp"
+                android:scaleType="centerInside"/>
+
+            <ImageView
+                android:id="@+id/imvWin2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1"
+                android:translationZ="@dimen/_10sdp"
+                android:scaleType="centerInside"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:focusable="true"
+        app:cardElevation="@dimen/dp_5"
+        app:cardCornerRadius="@dimen/dp_5"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/retry_alert_bg"
+            android:orientation="vertical">
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:padding="5dp"
+                android:background="@color/black"
+                android:gravity="center"
+                android:text="@string/apply_gift_code"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <in.kpis.afoozo.custome.EditTextViewRegular
+                    android:id="@+id/etGiftCode"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height= "@dimen/dp_40"
+                    android:layout_margin="@dimen/dp_20"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    android:hint="@string/enter_gift_code"
+                    android:background="@drawable/black_rounded_corner_border"/>
+
+                <in.kpis.afoozo.custome.ButtonViewRegular
+                    android:id="@+id/btnApply"
+                    style="@style/login_signup_button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="@string/apply" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

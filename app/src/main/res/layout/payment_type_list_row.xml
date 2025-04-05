@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+<LinearLayout
+    android:id="@+id/llPayment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/payment_horizontal_layout_style"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imvPayUMoney"
+            style="@style/payment_image_view_style"
+            android:src="@drawable/ic_friends" />
+
+        <TextView
+            android:id="@+id/txtPayemtType"
+            style="@style/payment_text_view_style"
+            android:text="@string/pay_u_money" />
+
+    </LinearLayout>
+
+    <in.kpis.afoozo.custome.TextViewRegular
+        android:visibility="gone"
+        android:id="@+id/txtPayUmoneySpice"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:text="@string/credit_debit_netbanking_wallet"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="-10dp"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
+
+</layout>

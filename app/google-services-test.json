@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "686640132763",
+    "firebase_url": "https://afoozotest.firebaseio.com",
+    "project_id": "afoozotest",
+    "storage_bucket": "afoozotest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686640132763:android:682c0e786528e0b2840c3e",
+        "android_client_info": {
+          "package_name": "in.kpis.afoozotest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686640132763-5oa5ceuqp7t4efh17met09jugitnmk4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoz3Xt8Jj28XTixkRZucnCsdy_8JVbLI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686640132763-5oa5ceuqp7t4efh17met09jugitnmk4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

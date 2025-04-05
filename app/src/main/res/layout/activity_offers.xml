@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.OffersActi">
+
+        <include layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabOffers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            android:background="@color/white"
+            android:translationZ="@dimen/dp_5"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@color/textPrimary"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabGravity="fill"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpOffers"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    </LinearLayout>
+
+</layout>

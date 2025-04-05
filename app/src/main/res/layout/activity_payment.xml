@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type = "android.view.View"/>
+        <variable
+            name="isShowCard"
+            type="java.lang.Boolean"/>
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.PaymentActi">
+
+        <include layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{isShowCard?View.GONE:View.VISIBLE}"
+            />
+
+        <LinearLayout
+            android:id="@+id/llCardDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{isShowCard?View.VISIBLE:View.GONE}"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_gray_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_1"
+                    android:orientation="horizontal">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/payment_left_bg"
+                        android:text="@string/card_no"
+                        android:textSize="@dimen/sp_16"/>
+
+                    <in.kpis.afoozo.custome.EditTextViewRegular
+                        android:id="@+id/eTextCardNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:background="@color/transparent"
+                        android:layout_weight=".4"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        android:hint="Card Number" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/dark_gray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_1"
+                    android:orientation="horizontal">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/payment_left_middle_bf"
+                        android:text="@string/expiry_date"
+                        android:textSize="@dimen/sp_16"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:orientation="horizontal">
+
+                        <in.kpis.afoozo.custome.EditTextViewRegular
+                            android:id="@+id/eTextMonth"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:padding="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:background="@color/transparent"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16"
+                            android:hint="DD" />
+
+                        <View
+                            android:layout_width="@dimen/dp_1"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:background="@color/dark_gray"/>
+
+                        <in.kpis.afoozo.custome.EditTextViewRegular
+                            android:id="@+id/eTextYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:padding="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:background="@color/transparent"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16"
+                            android:hint="YYYY" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/dark_gray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_1"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:layout_marginTop="-1dp"
+                    android:orientation="horizontal">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/payment_left_bottom"
+                        android:text="@string/cvv"
+                        android:textSize="@dimen/sp_16"/>
+
+                    <EditText
+                        android:id="@+id/eTextCVV"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:layout_weight=".4"
+                        android:background="@color/transparent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        android:hint="CVV" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <in.kpis.afoozo.custome.ButtonViewRegular
+                android:id="@+id/btnChargeCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_50sdp"
+                android:text="@string/pay_now"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:background="@drawable/rounded_btn_bg"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

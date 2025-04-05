@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+
+    <LinearLayout
+        android:id="@+id/llCustomization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbCustomization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:clickable="false"
+            android:focusable="false"
+            android:button="@drawable/check_box"/>
+
+        <RadioButton
+            android:id="@+id/rbCustomization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:clickable="false"
+            android:focusable="false"
+            android:button="@drawable/radio_button_customization"/>
+
+        <in.kpis.afoozo.custome.TextViewRegular
+            android:id="@+id/txtTitle"
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data></data>
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/dp_15"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <in.kpis.afoozo.custome.TextViewRegular
+            android:id="@+id/txtTotalItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="1 item"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/sp_14"/>
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="@color/colorAccent"/>
+
+        <in.kpis.afoozo.custome.TextViewRegular
+            android:id="@+id/txtCartTotal"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rs.105.32"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/sp_14"/>
+
+        <in.kpis.afoozo.custome.TextViewRegular
+            android:id="@+id/txtViewCart"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:gravity="center_vertical|right"
+            android:background="@drawable/color_accent_rounded_border"
+            android:text="@string/view_cart"
+            android:onClick="saveOrderProcess"
+            android:drawablePadding="@dimen/_10sdp"
+            android:textSize="@dimen/sp_16"
+            android:drawableRight="@drawable/ic_view_cart"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+</layout>
+

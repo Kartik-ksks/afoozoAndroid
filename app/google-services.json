@@ -1,0 +1,155 @@
+{
+  "project_info": {
+    "project_number": "949929769162",
+    "firebase_url": "https://afoozo.firebaseio.com",
+    "project_id": "afoozo",
+    "storage_bucket": "afoozo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949929769162:android:166bbdb01a12beaea45c33",
+        "android_client_info": {
+          "package_name": "in.kpis.afoozo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHn4VNqk8icl-9IC2o5yjZ2zUB_Q60OVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "949929769162-9vd3bq9b3518vtcd9cfms4f6fv1if5k6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kpis.Afoozo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949929769162:android:b0fae700eac57e51a45c33",
+        "android_client_info": {
+          "package_name": "in.kpis.afoozodriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHn4VNqk8icl-9IC2o5yjZ2zUB_Q60OVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "949929769162-9vd3bq9b3518vtcd9cfms4f6fv1if5k6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kpis.Afoozo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949929769162:android:f977538374c30c93a45c33",
+        "android_client_info": {
+          "package_name": "in.kpis.afoozotest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHn4VNqk8icl-9IC2o5yjZ2zUB_Q60OVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "949929769162-9vd3bq9b3518vtcd9cfms4f6fv1if5k6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kpis.Afoozo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949929769162:android:9ad6ade344b614cfa45c33",
+        "android_client_info": {
+          "package_name": "in.kpis.afoozovendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHn4VNqk8icl-9IC2o5yjZ2zUB_Q60OVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949929769162-2kb85s5v24g2si7ra7gj64v937j454v5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "949929769162-9vd3bq9b3518vtcd9cfms4f6fv1if5k6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kpis.Afoozo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<in.kpis.afoozo.custome.TextViewRegular
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/customTab"
+    android:gravity="center"
+    android:textColor="@color/colorAccent"
+    android:textSize="@dimen/sp_16"/>

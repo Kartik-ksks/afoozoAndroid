@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.OrderHistoryActi">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar"
+                android:id="@+id/toolbar"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:translationZ="@dimen/dp_5"
+                android:visibility="gone"
+                android:background="@color/white"
+                android:padding="@dimen/dp_10">
+
+                <Spinner
+                    android:id="@+id/spOrders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    app:cardCornerRadius="@dimen/_10sdp">
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtTotalOrders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_orders"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/_10sdp"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    app:cardCornerRadius="@dimen/_10sdp">
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtTotalBtc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_btc"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/_10sdp"/>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/color_primary_border">
+
+
+                <in.kpis.afoozo.custome.TextViewBold
+                    android:id="@+id/txtStartDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:drawableRight="@drawable/ic_calendar"
+                    android:hint="@string/startData"
+                    android:padding="@dimen/dp_5"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1 "
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/color_primary_border">
+
+
+                <in.kpis.afoozo.custome.TextViewBold
+                    android:id="@+id/txtEndDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:drawableRight="@drawable/ic_calendar"
+                    android:hint="@string/end_date"
+                    android:padding="@dimen/dp_5"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_5"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/tip_layout"
+            android:id="@+id/bottomSheet"/>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

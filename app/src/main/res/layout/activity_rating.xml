@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.RatingActi">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar"
+                android:id="@+id/toolbar"/>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llDriver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardElevation="@dimen/dp_5"
+                            app:cardCornerRadius="@dimen/dp_10"
+                            android:layout_margin="@dimen/dp_10">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_10"
+                                android:orientation="vertical">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rate_driver"
+                                    android:textSize="@dimen/sp_16"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <androidx.appcompat.widget.AppCompatRatingBar
+                                    android:id="@+id/rbDriver"
+                                    style="@style/rating_bar_style_large"
+                                    android:layout_height="wrap_content"
+                                    android:rating="5"
+                                    android:stepSize="1"
+                                    android:layout_marginTop="@dimen/dp_10" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_10"
+                            android:visibility="gone"
+                            android:text="@string/what_did_you_like_best"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:visibility="gone"
+                            android:background="@color/Grey_300"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                style="@style/rating_checkbox_layout_style">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    style="@style/rating_text_view_style"
+                                    android:text="@string/delivery_time"/>
+
+                                <RadioGroup
+                                    style="@style/rating_radio_group_style">
+
+                                    <RadioButton
+                                        android:id="@+id/rbDTimeYes"
+                                        style="@style/rating_radiobutton_style"
+                                        android:text="@string/Yes"/>
+
+                                    <RadioButton
+                                        android:id="@+id/rbDTimeNo"
+                                        style="@style/rating_radiobutton_style"
+                                        android:layout_marginLeft="@dimen/dp_10"
+                                        android:text="@string/no"/>
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                style="@style/rating_checkbox_layout_style">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    style="@style/rating_text_view_style"
+
+                                    android:text="@string/food_handling"/>
+
+                                <RadioGroup
+                                    style="@style/rating_radio_group_style">
+
+                                    <RadioButton
+                                        android:id="@+id/rbFoodYes"
+                                        style="@style/rating_radiobutton_style"
+                                        android:text="@string/Yes"/>
+
+                                    <RadioButton
+                                        android:id="@+id/rbFoodNo"
+                                        style="@style/rating_radiobutton_style"
+                                        android:layout_marginLeft="@dimen/dp_10"
+                                        android:text="@string/no"/>
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                style="@style/rating_checkbox_layout_style">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    style="@style/rating_text_view_style"
+                                    android:text="@string/executives_attitude"/>
+
+                                <RadioGroup
+                                    style="@style/rating_radio_group_style">
+
+                                    <RadioButton
+                                        android:id="@+id/rbAttitudeYes"
+                                        style="@style/rating_radiobutton_style"
+                                        android:text="@string/Yes"/>
+
+                                    <RadioButton
+                                        android:id="@+id/rbAttitudeNo"
+                                        style="@style/rating_radiobutton_style"
+                                        android:layout_marginLeft="@dimen/dp_10"
+                                        android:text="@string/no"/>
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                style="@style/rating_checkbox_layout_style"
+                                android:visibility="invisible">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    style="@style/rating_text_view_style"
+                                    android:text="@string/food_handling"/>
+
+                                <CheckBox
+                                    style="@style/rating_checkbox_style"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:background="@color/Grey_300"/>
+
+                    </LinearLayout>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="@dimen/dp_5"
+                        app:cardCornerRadius="@dimen/dp_10"
+                        android:layout_margin="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_10"
+                            android:orientation="vertical">
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rate_restaurant"
+                                android:textSize="@dimen/sp_16"
+                                android:textColor="@color/colorPrimary"/>
+
+                            <androidx.appcompat.widget.AppCompatRatingBar
+                                style="@style/rating_bar_style_large"
+                                android:id="@+id/rbRestaurant"
+                                android:rating="5"
+                                android:stepSize="1"
+                                android:layout_marginTop="@dimen/dp_10"/>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="@string/what_did_you_like_best"
+                        android:textSize="@dimen/sp_16"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@color/Grey_300"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            style="@style/rating_checkbox_layout_style">
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                style="@style/rating_text_view_style"
+                                android:text="@string/taste"/>
+
+                            <RadioGroup
+                                style="@style/rating_radio_group_style"
+                                android:checkedButton="@+id/rbTasteYes">
+
+                                <RadioButton
+                                    android:id="@+id/rbTasteYes"
+                                    style="@style/rating_radiobutton_style"
+                                    android:text="@string/Yes"/>
+
+                                <RadioButton
+                                    android:id="@+id/rbTasteNo"
+                                    style="@style/rating_radiobutton_style"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:text="@string/no"/>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/rating_checkbox_layout_style">
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                style="@style/rating_text_view_style"
+                                android:text="@string/portion_size"/>
+
+                            <RadioGroup
+                                style="@style/rating_radio_group_style"
+                                android:checkedButton="@+id/rbPortionSizeYes">
+
+                                <RadioButton
+                                    android:id="@+id/rbPortionSizeYes"
+                                    style="@style/rating_radiobutton_style"
+                                    android:text="@string/Yes"/>
+
+                                <RadioButton
+                                    android:id="@+id/rbPortionSizeNo"
+                                    style="@style/rating_radiobutton_style"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:text="@string/no"/>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            style="@style/rating_checkbox_layout_style">
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                style="@style/rating_text_view_style"
+                                android:text="@string/food_packing"/>
+
+                            <RadioGroup
+                                style="@style/rating_radio_group_style"
+                                android:checkedButton="@+id/rbFoodPackingYes">
+
+                                <RadioButton
+                                    android:id="@+id/rbFoodPackingYes"
+                                    style="@style/rating_radiobutton_style"
+                                    android:text="@string/Yes"/>
+
+                                <RadioButton
+                                    android:id="@+id/rbFoodPackingNo"
+                                    style="@style/rating_radiobutton_style"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:text="@string/no"/>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/rating_checkbox_layout_style"
+                            android:visibility="invisible">
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                style="@style/rating_text_view_style"
+                                android:text="@string/food_handling"/>
+
+                            <CheckBox
+                                style="@style/rating_checkbox_style"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:padding="@dimen/dp_10"
+                            android:text="@string/item_rate"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:background="@color/Grey_300"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvItems"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp_10"/>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:background="@color/Grey_300"/>
+
+                    </LinearLayout>
+
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="@string/your_suggestion_here"
+                        android:textSize="@dimen/sp_16"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@color/Grey_300"/>
+
+                    <in.kpis.afoozo.custome.EditTextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_80"
+                        android:layout_margin="@dimen/dp_10"
+                        android:padding="@dimen/dp_10"
+                        android:gravity="left|start"
+                        android:textSize="@dimen/sp_14"
+                        android:hint="@string/write_here"
+                        android:id="@+id/etSuggestion"
+                        android:background="@drawable/grey_rounded_border"/>
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_15"
+                android:gravity="center"
+                android:onClick="ratingProcess"
+                android:background="@color/colorPrimary"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/colorAccent"
+                android:text="@string/submit"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/tip_layout"
+            android:id="@+id/bottomSheet"/>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

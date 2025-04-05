@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        app:cardElevation="@dimen/dp_5"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <LinearLayout
+            android:id="@+id/llRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_90"
+                    android:layout_margin="@dimen/dp_10"
+                    app:cardElevation="@dimen/dp_5"
+                    app:cardCornerRadius="@dimen/dp_5">
+
+                    <ImageView
+                        android:id="@+id/imvItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/imvVegNonVeg"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_margin="@dimen/dp_20"
+                    android:visibility="gone"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"/>
+
+                <ProgressBar
+                    android:id="@+id/pbRest"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:visibility="gone"
+                    android:id="@+id/txtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_below="@id/txtTitle"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/textPrimary"/>
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtCuisine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_below="@id/txtTitle"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/textPrimary"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtRestClose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/textPrimary"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:visibility="visible"
+                    android:id="@+id/txtDeliveryTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/textPrimary"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtRating"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:textSize="@dimen/sp_14"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:drawableLeft="@drawable/ic_star_accent"
+                        android:textColor="@color/colorAccent"/>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:visibility="gone"
+                        android:id="@+id/txtDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_below="@id/txtTitle"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:drawableLeft="@drawable/ic_motorcycle"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/textPrimary"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</layout>

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="showBankList"
+            type="boolean" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".activity.PaymentTypeActi">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{showBankList ? View.GONE : View.VISIBLE}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/txtTotalAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pay"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_22"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/llSavedCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="@string/saved_cards"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_18"
+                        android:textStyle="bold" />
+
+                    <View
+                        style="@style/payment_horizontal_line_style"
+                        android:layout_marginTop="@dimen/_10sdp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSavedCards"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+
+
+                <!--                <TextView-->
+                <!--                    -->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/dp_5"-->
+                <!--                    android:text="@string/pay_online"-->
+                <!--                    android:textColor="@color/colorPrimary"-->
+                <!--                    android:textSize="@dimen/sp_18"-->
+                <!--                    android:textStyle="bold" />-->
+
+                <!--                <View-->
+                <!--                    style="@style/payment_horizontal_line_style"-->
+                <!--                    android:layout_marginTop="@dimen/_10sdp" />-->
+
+                <!--                <RelativeLayout-->
+                <!--                    android:id="@+id/llPayUmoney"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:onClick="onClick">-->
+
+                <!--                    <LinearLayout-->
+                <!--                        style="@style/payment_horizontal_layout_style"-->
+                <!--                        android:visibility="visible">-->
+
+                <!--                        <ImageView-->
+                <!--                            android:id="@+id/imvPayUMoney"-->
+                <!--                            style="@style/payment_image_view_style"-->
+                <!--                            android:src="@drawable/ic_friends" />-->
+
+                <!--                        <TextView-->
+                <!--                            style="@style/payment_text_view_style"-->
+                <!--                            android:text="@string/pay_u_money" />-->
+
+                <!--                    </LinearLayout>-->
+                <!--                </RelativeLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/llPaytm"
+                        style="@style/payment_horizontal_layout_style"
+                        android:onClick="onClick"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imvPaytmW"
+                            style="@style/payment_image_view_style"
+                            android:src="@drawable/ic_friends" />
+
+                        <TextView
+                            style="@style/payment_text_view_style"
+                            android:text="@string/paytm" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/payment_horizontal_line_style"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/llOlaMoney"
+                        style="@style/payment_horizontal_layout_style"
+                        android:onClick="onClick"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imvOlaMoney"
+                            style="@style/payment_image_view_style"
+                            android:src="@drawable/ic_friends" />
+
+                        <TextView
+                            style="@style/payment_text_view_style"
+                            android:text="@string/ola_money" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/payment_horizontal_line_style"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/llPayZApp"
+                        style="@style/payment_horizontal_layout_style"
+                        android:onClick="onClick"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imvPayZApp"
+                            style="@style/payment_image_view_style"
+                            android:src="@drawable/ic_friends" />
+
+                        <TextView
+                            style="@style/payment_text_view_style"
+                            android:text="@string/pay_z_app" />
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/payment_horizontal_line_style"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/llPhonePe"
+                        style="@style/payment_horizontal_layout_style"
+                        android:onClick="onClick"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imvPhonepeW"
+                            style="@style/payment_image_view_style"
+                            android:src="@drawable/ic_friends" />
+
+                        <TextView
+                            style="@style/payment_text_view_style"
+                            android:text="@string/phone_pe" />
+
+                    </LinearLayout>
+
+                    <View style="@style/payment_horizontal_line_style" />
+
+                    <LinearLayout
+                        android:id="@+id/llFreeCharge"
+                        style="@style/payment_horizontal_layout_style"
+                        android:onClick="onClick">
+
+                        <ImageView
+                            android:id="@+id/imvFreechargeW"
+                            style="@style/payment_image_view_style"
+                            android:src="@drawable/ic_friends" />
+
+                        <TextView
+                            style="@style/payment_text_view_style"
+                            android:text="@string/freecharge" />
+
+                    </LinearLayout>
+
+                    <View style="@style/payment_horizontal_line_style" />
+
+
+                    <LinearLayout
+                        style="@style/payment_horizontal_layout_style"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/payment_normal_text_view_style"
+                            android:text="@string/online_payments"
+                            android:textSize="@dimen/sp_18"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/payment_normal_text_view_style"
+                            android:text="@string/after_your_first_payment"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_14" />
+
+                    </LinearLayout>
+
+                    <View style="@style/payment_horizontal_line_style" />
+
+                    <LinearLayout
+                        android:id="@+id/llCreditDebit"
+                        style="@style/payment_horizontal_layout_style"
+                        android:onClick="onClick">
+
+                        <ImageView
+                            style="@style/payment_image_view_style"
+                            android:src="@drawable/ic_card" />
+
+                        <TextView
+                            style="@style/payment_text_view_style"
+                            android:text="@string/credit_debit_atm_card" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View style="@style/payment_horizontal_line_style" />
+
+                <LinearLayout
+                    android:id="@+id/llNetBanking"
+                    style="@style/payment_horizontal_layout_style"
+                    android:onClick="onClick"
+                    android:visibility="gone">
+
+                    <ImageView
+                        style="@style/payment_image_view_style"
+                        android:src="@drawable/ic_netbanking" />
+
+                    <TextView
+                        style="@style/payment_text_view_style"
+                        android:text="@string/netbanking" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/payment_horizontal_line_style"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llCash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout style="@style/payment_horizontal_layout_style">
+
+                        <TextView
+                            style="@style/payment_normal_text_view_style"
+                            android:text="@string/cash"
+                            android:textSize="@dimen/sp_18"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View style="@style/payment_horizontal_line_style" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/llCOD"
+                            style="@style/payment_horizontal_layout_style">
+
+                            <ImageView
+                                style="@style/payment_image_view_style"
+                                android:src="@drawable/ic_cashondelivery" />
+
+                            <TextView
+                                android:id="@+id/txtCaseONDelivery"
+                                style="@style/payment_text_view_style"
+                                android:onClick="onClick"
+                                android:text="@string/cash_on_delivery" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View style="@style/payment_horizontal_line_style" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/llBillToCompany"
+                            style="@style/payment_horizontal_layout_style"
+                            android:onClick="onClick">
+
+                            <ImageView
+                                style="@style/payment_image_view_style"
+                                android:src="@drawable/ic_cashondelivery" />
+
+                            <TextView
+                                android:id="@+id/txtBilltoCompany"
+                                style="@style/payment_text_view_style"
+                                android:onClick="onClick"
+                                android:text="@string/bill_to_company" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPaymentType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:nestedScrollingEnabled="false" />
+
+                <!--<View style="@style/payment_horizontal_line_style" />-->
+
+                <!--<LinearLayout-->
+                <!--style="@style/payment_horizontal_layout_style">-->
+
+                <!--<TextView-->
+                <!--style="@style/payment_normal_text_view_style"-->
+                <!--android:text="@string/pay_later"-->
+                <!--android:textSize="@dimen/sp_18"-->
+                <!--android:textStyle="bold"/>-->
+
+                <!--</LinearLayout>-->
+
+                <!--<View style="@style/payment_horizontal_line_style" />-->
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/llLazyPay"-->
+                <!--style="@style/payment_horizontal_layout_style">-->
+
+                <!--<ImageView-->
+                <!--style="@style/payment_image_view_style"-->
+                <!--android:src="@drawable/ic_friends"/>-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="@dimen/dp_0"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                <!--style="@style/payment_normal_text_view_style"-->
+                <!--android:text="@string/lazy_pay"-->
+                <!--android:textStyle="bold"/>-->
+
+                <!--<TextView-->
+                <!--style="@style/payment_normal_text_view_style"-->
+                <!--android:text="You are not yet eligible to use Lazypay"-->
+                <!--android:textColor="@color/textPrimary" />-->
+
+                <!--</LinearLayout>-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_next"/>-->
+
+                <!--</LinearLayout>-->
+
+                <!--<View style="@style/payment_horizontal_line_style" />-->
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/llSimple"-->
+                <!--style="@style/payment_horizontal_layout_style">-->
+
+                <!--<ImageView-->
+                <!--style="@style/payment_image_view_style"-->
+                <!--android:src="@drawable/ic_friends"/>-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="@dimen/dp_0"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                <!--style="@style/payment_normal_text_view_style"-->
+                <!--android:text="@string/simpl"-->
+                <!--android:textStyle="bold"/>-->
+
+                <!--<TextView-->
+                <!--style="@style/payment_normal_text_view_style"-->
+                <!--android:text="You are not yet eligible to use Simple"-->
+                <!--android:textColor="@color/textPrimary" />-->
+
+                <!--</LinearLayout>-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_next"/>-->
+
+                <!--</LinearLayout>-->
+
+                <!--<View style="@style/payment_horizontal_line_style" />-->
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBank"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{showBankList ? View.VISIBLE : View.GONE}" />
+
+    </LinearLayout>
+
+</layout>

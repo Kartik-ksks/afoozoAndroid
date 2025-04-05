@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <ScrollView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".fragment.AddFrag">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                app:cardElevation="@dimen/dp_5"
+                app:cardCornerRadius="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        style="@style/wallet_add_text_view_style"
+                        android:drawableLeft="@drawable/ic_wallet"
+                        android:layout_margin="@dimen/dp_10"
+                        android:text="@string/add_rs_to_your_wallet" />
+
+                    <in.kpis.afoozo.custome.EditTextViewRegular
+                        android:id="@+id/etAmount"
+                        style="@style/wallet_add_edit_text_style"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:inputType="number"
+                        android:hint="@string/enter_amount"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_margin="@dimen/dp_10"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/wallet_amount_dashed_border">
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txt2"
+                            style="@style/wallet_amount_text_view_style"
+                            android:text="+2000" />
+
+                        <View
+                            android:layout_width="@dimen/dp_1"
+                            android:layout_height="@dimen/dp_30"
+                            android:background="@color/black"/>
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txt5"
+                            style="@style/wallet_amount_text_view_style"
+                            android:text="+5000"/>
+
+                        <View
+                            android:layout_width="@dimen/dp_1"
+                            android:layout_height="@dimen/dp_30"
+                            android:background="@color/black"/>
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txt10"
+                            style="@style/wallet_amount_text_view_style"
+                            android:text="+10000"/>
+
+                    </LinearLayout>
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnAddAmount"
+                        style="@style/login_signup_button_style"
+                        android:layout_width="match_parent"
+                        android:layout_margin="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:text="@string/add_securely"/>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_2"
+                        android:background="@drawable/gray_dashed_line"/>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        style="@style/wallet_add_text_view_style"
+                        android:drawableLeft="@drawable/ic_discount"
+                        android:layout_margin="@dimen/dp_10"
+                        android:text="@string/have_a_promo_code" />
+
+                    <in.kpis.afoozo.custome.EditTextViewRegular
+                        android:id="@+id/etVoucher"
+                        style="@style/wallet_add_edit_text_style"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:hint="@string/enter_promo_code"/>
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnApplyCode"
+                        style="@style/login_signup_button_style"
+                        android:layout_width="match_parent"
+                        android:layout_margin="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:text="@string/apply_code"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_10"
+                        android:visibility="gone"
+                        android:gravity="center_vertical">
+
+                        <View
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:background="@drawable/grey_dashed_border"/>
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:text="@string/or"
+                            android:textSize="@dimen/sp_16"
+                            android:textColor="@color/textPrimary"/>
+
+                        <View
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_2"
+                            android:layout_weight="1"
+                            android:background="@drawable/grey_dashed_border"/>
+                    </LinearLayout>
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_margin="@dimen/dp_10"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:background="@drawable/dashed_gray_circle_btn_bg"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:text="@string/scan_qr_code"
+                        android:textColor="@color/colorPrimary"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</layout>

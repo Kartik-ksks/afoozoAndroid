@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.cardview.widget.CardView
+        style="@style/list_card_view_style"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <LinearLayout
+            android:id="@+id/llHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Kanha Restro"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/sp_16" />
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:singleLine="true"
+                            android:text="136- Shivraj Niketan Colony, Jaipur, Rajasthan-302020"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_14" />
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="Rs.235.00"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id='@+id/imvType'
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="@dimen/dp_50"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:background="@color/colorPrimary" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amritsari Naan x 1, Paneer Tikka x 1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_16" />
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="September 13, 9:20 PM"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_14" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnClearTable"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@drawable/reorder_btn_bg"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:text="@string/clear_table"
+                        android:textColor="@color/colorAccent"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/sp_10" />
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnReOrder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@drawable/reorder_btn_bg"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:text="@string/reorder"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/sp_10" />
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnFeedback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@drawable/reorder_btn_bg"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:text="@string/feedback"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/sp_10" />
+
+                    <in.kpis.afoozo.custome.ButtonViewRegular
+                        android:id="@+id/btnDriverTip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@drawable/reorder_btn_bg"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:text="@string/tip_rider"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/sp_10"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

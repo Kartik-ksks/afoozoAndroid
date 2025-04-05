@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+            <variable
+            name="isPayment"
+            type="boolean" />
+
+        <variable
+            name="isAddress"
+            type="boolean" />
+
+        <variable
+            name="isPlace"
+            type="boolean" />
+
+        <variable
+            name="isOfferAvailable"
+            type="boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.CartActi">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:background="@color/app_bg"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/txtNoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/empty_cart"
+                android:visibility="gone" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nsvData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llFood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCart"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_0"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:padding="@dimen/_5sdp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvYouMayLike"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
+                            app:cardCornerRadius="@dimen/dp_10"
+                            app:cardElevation="@dimen/dp_5">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/Grey_200"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp_10"
+                                android:translationZ="@dimen/_5sdp"
+                                android:visibility="gone">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:text="@string/you_may_also_like"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvYouMayLike"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:elevation="@dimen/_5sdp"
+                            android:padding="@dimen/dp_5"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_10sdp">
+
+                                <in.kpis.afoozo.custome.EditTextViewRegular
+                                    android:id="@+id/etInstruction"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
+                                    android:background="@drawable/black_rounded_corner_border"
+                                    android:hint="@string/cooking_instruction"
+                                    android:paddingLeft="@dimen/dp_10"
+                                    android:paddingRight="@dimen/dp_10"
+                                    android:textColor="@color/colorPrimary" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:background="@color/colorPrimary"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/offer_unlocked"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/sp_16"
+                            android:visibility="@{isOfferAvailable ? View.VISIBLE : View.GONE}" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/delivery_offer_bg"
+                            android:gravity="center_vertical"
+                            android:onClick="showOffer"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp"
+                            android:translationZ="@dimen/dp_5"
+                            android:visibility="@{isOfferAvailable ? View.VISIBLE : View.GONE}">
+
+                            <ImageView
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_just_for_you" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtOfferMessage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/red"
+                                    android:textSize="@dimen/sp_16" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:elevation="@dimen/_5sdp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_25sdp"
+                                        android:layout_height="@dimen/_25sdp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ic_promo" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:id="@+id/txtApplyCoupon"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/apply_promo_code"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/sp_16" />
+
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:id="@+id/imvCoupon"
+                                        android:layout_width="@dimen/_35sdp"
+                                        android:layout_height="@dimen/_35sdp"
+                                        android:onClick="couponProcess"
+                                        android:padding="@dimen/_5sdp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ic_next" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_1sdp"
+                                    android:background="@color/gray"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_10sdp"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_25sdp"
+                                            android:layout_height="@dimen/_25sdp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ic_reward" />
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:layout_width="@dimen/dp_0"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:text="@string/apply_reward_coins"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/sp_16" />
+
+                                        <ImageView
+                                            android:id="@+id/imvRewardNext"
+                                            android:layout_width="@dimen/_35sdp"
+                                            android:layout_height="@dimen/_35sdp"
+                                            android:onClick="onClick"
+                                            android:padding="@dimen/_5sdp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ic_next"
+                                            android:text="@string/change" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/llRewardLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/_30sdp"
+                                        android:orientation="vertical"
+                                        android:visibility="gone">
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:id="@+id/txtTotalCoins"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Total 200"
+                                            android:textColor="@color/gray"
+                                            android:textSize="@dimen/sp_16" />
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:id="@+id/txtSelectedCoins"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Selected 0"
+                                            android:textColor="@color/gray"
+                                            android:textSize="@dimen/sp_16" />
+
+                                        <SeekBar
+                                            android:id="@+id/seekBarRewards"
+                                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:layout_marginBottom="@dimen/_5sdp"
+                                            android:max="100"
+                                            android:progressTint="@color/colorPrimary" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:elevation="@dimen/_5sdp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_10sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_promo" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="visible">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cbCoinLoyalty"
+                                            android:layout_width="@dimen/dp_0"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@string/pay_by_coin"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/sp_16" />
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:id="@+id/txtPayCoinLoyaltyAmount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/dp_10"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/sp_16" />
+
+                                    </LinearLayout>
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtAvailableCoinLoyaltyAmount"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/available_coin_amount_"
+                                        android:textColor="@color/Grey_600"
+                                        android:textSize="@dimen/sp_14" />
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdp"
+                                    android:text="@string/billing_information"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+
+                                <LinearLayout
+                                    android:id="@+id/llSubTotal"
+                                    style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/restaurant_bill"
+                                        android:textColor="@color/textPrimary"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtRestBill"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llTax"
+                                    style="@style/cart_price_layout_style">
+
+                                    <LinearLayout
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0"
+                                            android:text="@string/tax"
+                                            android:textColor="@color/gray"
+                                            android:textSize="@dimen/sp_14" />
+
+                                        <ImageView
+                                            android:id="@+id/imvTaxInfo"
+                                            android:layout_width="@dimen/dp_30"
+                                            android:layout_height="@dimen/dp_30"
+                                            android:onClick="showInfoPopUp"
+                                            android:padding="@dimen/dp_5"
+                                            android:src="@drawable/ic_information" />
+
+                                    </LinearLayout>
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtTax"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llPackingCharges"
+                                    style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/packing_charges"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtPacking"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llDeliveryCharges"
+                                    style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/delivery_charges"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtDeliveryCharge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llLoyaltyAmount"
+                                    style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/pay_by_coin"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtLoyaltyAmount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llCoupon"
+                                    style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/coupon_discount"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtCouponDis"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="@dimen/_10sdp"
+                                    android:paddingRight="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_10sdp"
+                                    android:visibility="gone">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/reward_coins"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtRewardCons"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Rs. 25.00"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_1sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="@color/Grey_300" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/total"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtTotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                        <LinearLayout
+                            android:id="@+id/llAddressMain"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10sdp"
+                            android:translationZ="@dimen/_5sdp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/delivering_food_to"
+                                    android:textColor="@color/textPrimary"
+                                    android:textSize="@dimen/sp_16" />
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtAddAddress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="goToAddressScreen"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="@string/add_address"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/sp_16"
+                                    android:visibility="@{isAddress?View.GONE:View.VISIBLE}" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+
+                                android:visibility="@{isAddress?View.VISIBLE:View.GONE}">
+
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtDeliveryAdd"
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:drawableLeft="@drawable/ic_checked"
+                                    android:drawablePadding="@dimen/_10sdp"
+                                    android:gravity="center_vertical"
+                                    android:text="Work-Block A, Vaishali Nagar, Jaipur"
+                                    android:textColor="@color/black" />
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtChange"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="goToAddressScreen"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="@string/change"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/sp_16" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- for room booking data-->
+
+
+
+                    <LinearLayout
+                        android:id="@+id/llRoomBooking"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:elevation="@dimen/_5sdp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_25sdp"
+                                        android:layout_height="@dimen/_25sdp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ic_promo" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:id="@+id/txtApplyCouponRoom"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/apply_promo_code"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/sp_16" />
+
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:id="@+id/imvCouponRoom"
+                                        android:layout_width="@dimen/_35sdp"
+                                        android:layout_height="@dimen/_35sdp"
+                                        android:onClick="couponProcess"
+                                        android:padding="@dimen/_5sdp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ic_next" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_1sdp"
+                                    android:background="@color/gray"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_10sdp"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="@dimen/_25sdp"
+                                            android:layout_height="@dimen/_25sdp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ic_reward" />
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:layout_width="@dimen/dp_0"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:text="@string/apply_reward_coins"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/sp_16" />
+
+                                        <ImageView
+                                            android:id="@+id/imvRewardNextRoom"
+                                            android:layout_width="@dimen/_35sdp"
+                                            android:layout_height="@dimen/_35sdp"
+                                            android:onClick="onClick"
+                                            android:padding="@dimen/_5sdp"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/ic_next"
+                                            android:text="@string/change" />
+
+                                    </LinearLayout>
+
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <in.kpis.afoozo.custome.TextViewBold
+                                    android:id="@+id/txtRestaurantName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+
+                                    android:textSize="@dimen/sp_16" />
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtRoomType"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:textSize="@dimen/sp_14" />
+
+                                <LinearLayout style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/check_in"
+                                        android:textColor="@color/textPrimary"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtCheckInDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/checkout"
+                                        android:textColor="@color/textPrimary"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtCheckOutDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/room_number"
+                                        android:textColor="@color/textPrimary"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtRoomNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!--for room booking details-->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdp"
+                                    android:text="@string/billing_information"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+
+                                <LinearLayout
+                                    style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/room_charge"
+                                        android:textColor="@color/textPrimary"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtRoomCharge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llRoomTax"
+                                    style="@style/cart_price_layout_style">
+
+                                    <LinearLayout
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@string/tax"
+                                            android:textColor="@color/gray"
+                                            android:textSize="@dimen/sp_14" />
+
+                                        <in.kpis.afoozo.custome.TextViewRegular
+                                            android:id="@+id/txtRoomTax"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/sp_16" />
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llCouponRoom"
+                                    style="@style/cart_price_layout_style">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/coupon_discount"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtCouponDisRoom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:layout_width="@dimen/dp_0"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/total"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+
+                                    <in.kpis.afoozo.custome.TextViewRegular
+                                        android:id="@+id/txtRoomTotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_16" />
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp"
+                        android:translationZ="@dimen/_5sdp">
+
+                        <LinearLayout
+                            android:id="@+id/llCoin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/cbCoin"
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/pay_by_coin"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtPayCoinAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+                            </LinearLayout>
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                android:id="@+id/txtAvailableCoinAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/available_coin_amount_"
+                                android:textColor="@color/Grey_600"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/llWallet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/cbWallet"
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/pay_by_wallet"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtPayWalletAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+                            </LinearLayout>
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                android:id="@+id/txtAvailableWAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/available_wallet_amount_"
+                                android:textColor="@color/Grey_600"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/llPaymentType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <in.kpis.afoozo.custome.TextViewRegular
+                                android:id="@+id/txtPaymentMode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:text="@string/payment_mode"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/sp_16" />
+
+                            <in.kpis.afoozo.custome.ButtonViewRegular
+                                android:id="@+id/btnPaymentType"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_margin="@dimen/dp_10"
+                                android:background="@drawable/payment_button_bg"
+                                android:onClick="goToPaymentTypeScreen"
+                                android:text="@string/add_payment_mode"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_16"
+                                android:visibility="@{isPayment?View.GONE:View.VISIBLE}"/>
+
+                            <LinearLayout
+                                android:id="@+id/llPayment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:visibility="@{isPayment?View.VISIBLE:View.GONE}">
+
+                                <ImageView
+                                    android:id="@+id/imvPaymentType"
+                                    android:layout_width="@dimen/_24sdp"
+                                    android:layout_height="@dimen/_24sdp" />
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtPaymentType"
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="@dimen/_10sdp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16" />
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtChangeType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="goToPaymentTypeScreen"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="@string/change"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/sp_16" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/sbOrder"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@color/colorPrimary"
+                android:scaleY="1.5"
+                android:thumb="@null" />
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="closeProgress"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_close"
+                android:text="@string/cancel"
+                android:textColor="@color/red" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llbtnOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <in.kpis.afoozo.custome.ButtonViewRegular
+                android:id="@+id/btnDeliveryLatter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/delivery_later"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+
+            <in.kpis.afoozo.custome.ButtonViewRegular
+                android:id="@+id/btnDeliveryNow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/pay_now"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

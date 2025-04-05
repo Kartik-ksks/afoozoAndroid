@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragment.CategoryFrag">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvSticky"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:visibility="gone"
+            app:cardElevation="@dimen/dp_5"
+            app:cardCornerRadius="@dimen/dp_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <in.kpis.afoozo.custome.TextViewBold
+                        android:id="@+id/txtSubCatTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Shakes   Coffess"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/black"/>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtGroupDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Shakes   Coffess"
+                        android:visibility="gone"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/gray_font"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imvGroupUpDown"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:src="@drawable/ic_up_arrow"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

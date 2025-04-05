@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <LinearLayout
+        android:id="@+id/llBottomLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="@dimen/_10sdp"
+        android:background="@color/semi_transpaent"
+        app:behavior_hideable="true"
+        android:onClick="outerClick"
+        app:behavior_peekHeight="@dimen/dp_0"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/top_rounded_corner_white_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTipTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp_18"
+                    android:textColor="@color/black"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtTipMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtTipAmount"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:background="@drawable/black_rounded_corner_border"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtAdd50"
+                        style="@style/tip_screen_text_view_style"
+                        android:text="@string/rs_50"
+                        android:onClick="add50Process"/>
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtAdd100"
+                        style="@style/tip_screen_text_view_style"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:text="@string/rs_100"
+                        android:onClick="add100Process"/>
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtAdd200"
+                        style="@style/tip_screen_text_view_style"
+                        android:text="@string/rs_200"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:onClick="add200Process"/>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtAdd500"
+                        style="@style/tip_screen_text_view_style"
+                        android:text="@string/rs_500_"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:onClick="add500Process"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <in.kpis.afoozo.custome.ButtonViewRegular
+                    android:id="@+id/btnAddTip"
+                    style="@style/tip_screen_button_style"
+                    android:onClick="addTipProcess"
+                    android:text="@string/add_tip" />
+
+                <in.kpis.afoozo.custome.ButtonViewRegular
+                    android:id="@+id/btnSkip"
+                    style="@style/tip_screen_button_style"
+                    android:onClick="skipTipProcess"
+                    android:text="@string/skip" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

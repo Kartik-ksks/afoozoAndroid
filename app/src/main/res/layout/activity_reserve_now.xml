@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.EventDetailsActi">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:orientation="vertical"
+                android:fitsSystemWindows="true"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:background="@color/white"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:toolbarId="@+id/toolbarRest"
+                    app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbarRest"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp">
+
+                        <ImageView
+                            android:id="@+id/imvBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            android:scaleType="fitXY"/>
+
+                        <ImageView
+                            android:id="@+id/imvItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerInside" />
+
+                        <ProgressBar
+                            android:id="@+id/pbItem"
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:orientation="horizontal">
+
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtItemName"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/_40sdp"
+                        android:padding="@dimen/dp_10"
+                        android:text="lskfl sdjflk jdflkj dslfkj lsdkf"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/sp_16" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlAdd"
+                            android:layout_width="@dimen/dp_90"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_margin="@dimen/dp_5"
+                            android:onClick="addItemProcess"
+                            android:background="@drawable/color_accent_rounded_btn_bg"
+                            android:layout_gravity="center">
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/shimmerAddButton"
+                                android:layout_width="wrap_content"
+                                app:shimmer_fixed_width="@dimen/dp_50"
+                                android:layout_centerInParent="true"
+                                app:shimmer_highlight_color="@color/white"
+                                app:shimmer_base_color="@color/transparent"
+                                app:shimmer_colored="true"
+                                android:outlineSpotShadowColor="@color/white"
+                                android:outlineAmbientShadowColor="@color/white"
+                                android:visibility="visible"
+                                app:shimmer_duration="3000"
+                                android:layout_height="wrap_content">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/add_to_cart"
+                                    android:textSize="@dimen/sp_12"
+                                    android:textColor="@color/white"/>
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llAddRemove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_margin="@dimen/dp_5"
+                            android:visibility="visible"
+                            android:background="@drawable/color_accent_rounded_btn_bg"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/imbRemove"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:onClick="removeItemProcess"
+                                android:background="@color/transparent"
+                                android:src="@drawable/ic_remove_white"/>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="match_parent">
+
+                                <in.kpis.afoozo.custome.TextViewBold
+                                    android:id="@+id/txtCount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/circular_gradient_bg"
+                                    android:textColor="@color/white"
+                                    android:gravity="center"
+                                    android:translationZ="@dimen/dp_5"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pbCount"
+                                    android:layout_width="@dimen/dp_20"
+                                    android:layout_height="@dimen/dp_20"
+                                    android:visibility="gone"
+                                    android:layout_centerInParent="true"/>
+
+                            </RelativeLayout>
+
+                            <ImageButton
+                                android:id="@+id/imbAdd"
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:onClick="addItemProcess"
+                                android:background="@color/transparent"
+                                android:src="@drawable/ic_add_white"/>
+
+                        </LinearLayout>
+
+                        <in.kpis.afoozo.custome.TextViewRegular
+                            android:id="@+id/txtCustomizable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="@color/colorPrimary"
+                            android:text="@string/customizable"
+                            android:textSize="@dimen/sp_12"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0"
+                    android:layout_weight="1"
+                    android:layout_marginTop="-50dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
+                            app:cardCornerRadius="@dimen/dp_20"
+                            app:cardElevation="@dimen/dp_5">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp_10">
+
+                                <in.kpis.afoozo.custome.TextViewRegular
+                                    android:id="@+id/txtDetails"
+                                    style="@style/event_details_text_view_style"
+                                    android:layout_marginTop="@dimen/dp_4"
+                                    android:textColor="@color/gray"
+                                    android:text="Any Deal on purchased will be activated to consume after 6 hours of purchasing time"
+                                    android:textSize="@dimen/sp_16" />
+
+                                <WebView
+                                    android:id="@+id/wbStealDeal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_10"/>
+
+                                <in.kpis.afoozo.custome.ButtonViewRegular
+                                    style="@style/login_signup_button_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:onClick="showReservePopUp"
+                                    android:visibility="gone"
+                                    android:layout_marginBottom="@dimen/dp_10"
+                                    android:text="@string/reserve_now" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <include layout="@layout/view_cart_layout"
+            android:id="@+id/llCart"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+<data></data>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/dp_5"
+    android:layout_margin="@dimen/dp_5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imvVegNon"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/_5sdp"/>
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtItemCart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <in.kpis.afoozo.custome.TextViewRegular
+                    android:id="@+id/txtQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:text="1"
+                    android:textColor="@color/green"/>
+
+                <LinearLayout
+                    android:id="@+id/llAddRemove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/color_primary_border">
+
+                    <ImageView
+                        android:id="@+id/imvRemoveCart"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="@dimen/dp_30"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingLeft="@dimen/dp_12"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_12"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_remove_grey"/>
+
+                    <in.kpis.afoozo.custome.TextViewRegular
+                        android:id="@+id/txtQtyCart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/green"/>
+
+                    <ImageView
+                        android:id="@+id/imvAddCart"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="@dimen/dp_30"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_5"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_add_grey"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtAmountItem"
+                android:layout_width="@dimen/dp_0"
+                android:layout_weight=".6"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Rs. 120.00"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <in.kpis.afoozo.custome.TextViewRegular
+            android:id="@+id/txtCustomization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="Double Egg Roll"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <in.kpis.afoozo.custome.TextViewRegular
+                android:id="@+id/txtInstruction"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:visibility="visible"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/imvEdit"
+                style="@style/edit_image_view_style"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+</layout>

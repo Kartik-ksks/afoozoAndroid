@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_2"
+        android:layout_marginRight="@dimen/dp_2"
+        android:gravity="center_horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCuisine"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:cardElevation="@dimen/dp_5">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60">
+
+                <ImageView
+                    android:id="@+id/imvCuisine"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/imvTrans"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    android:src="#aa000000"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <in.kpis.afoozo.custome.TextViewRegular
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_2"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="Local Cuisine"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</layout>

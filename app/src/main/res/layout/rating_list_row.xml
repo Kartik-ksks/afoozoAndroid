@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data></data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_5"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <in.kpis.afoozo.custome.TextViewRegular
+            android:id="@+id/txtItem"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"/>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rbRatingList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:isIndicator="false"
+                android:rating="5"
+                android:stepSize="1"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:scaleY=".7"
+                android:scaleX=".7"/>
+    </LinearLayout>
+
+</layout>
