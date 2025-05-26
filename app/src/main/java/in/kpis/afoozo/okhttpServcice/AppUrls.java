@@ -6,9 +6,9 @@ package in.kpis.afoozo.okhttpServcice;
 
 public class AppUrls {
 //    public static final String BASE = "http://3.7.22.149/";//test
-    public static final String BASE = "http://192.168.1.20:8085/";
+//    public static final String BASE = "http://192.168.1.20:8085/";
 //            public static final String BASE = "http://test.afoozocafe.com/";
-//    public static final String BASE = "https://afoozocafe.com/";
+    public static final String BASE = "https://afoozocafe.com/";
 
 //    public static final String BASE = "http://192.168.1.25:8085/";
     public static final String BASE_URL = BASE + "v1/api/";

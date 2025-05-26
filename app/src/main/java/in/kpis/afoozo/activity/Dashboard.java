@@ -1,4 +1,5 @@
 package in.kpis.afoozo.activity;
+import in.kpis.afoozo.bean.TopSellingBean;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -49,6 +50,8 @@ import in.kpis.afoozo.util.Utils;
 public class Dashboard extends AppCompatActivity implements NavMenuFrag.FragmentDrawerListener {
     private Toolbar toolbar;
     private Context mContext;
+
+    private TopSellingBean topSellingBean;
     private ActivityDashboardBinding binding;
     boolean doubleBackToExitPressedOnce = false;
     private NavMenuFrag navMenuFrag;
@@ -74,13 +77,50 @@ public class Dashboard extends AppCompatActivity implements NavMenuFrag.Fragment
         }
         mContext = Dashboard.this;
         initialize();
+
+//        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+//        bottomNav.setOnNavigationItemSelectedListener(item -> {
+//            switch (item.getItemId()) {
+//                case R.id.nav_dine_in:
+//                    // Dine In: open DineInActi with proper intent extra
+//                    Intent dineInIntent = new Intent(this, DineInActi.class);
+//                    dineInIntent.putExtra(Constants.FROM_WHICH, getString(R.string.dine_in));
+//                    startActivity(dineInIntent);
+//                    return true;
+//                case R.id.nav_delivery:
+//                    // Delivery: open AddressActi with proper intent extras
+//                    Intent intent = new Intent(mContext, AddressActi.class);
+//                    intent.putExtra(Constants.IS_FROM_CART, true);
+//                    intent.putExtra(Constants.FROM_WHICH, getString(R.string.delivery));
+////                    intent.putExtra(Constants.TITLE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getTitle());
+////                    intent.putExtra(Constants.IS_OPEN, topSellingBean.getHomeDeliveryTopSellingItem().get(position).isRestaurantOpen());
+////                    intent.putExtra(Constants.RESTAURANT_ID, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getRestaurantUuid());
+////                    intent.putExtra(Constants.TAKEAWAY_MIN_ORDER_VALUE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getTakeAwayMinimumOrderAmount());
+////                    intent.putExtra(Constants.DELIVERY_MIN_ORDER_VALUE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getDeliveryMinimumOrderAmount());
+//                    startActivityForResult(intent, 103);
+//                    goToDeliveryRestaurantScreen(getString(R.string.delivery))
+//                    return true;
+////                case R.id.nav_take_away:
+////                    // Take Away: open RestaurantActi with proper intent extra
+////                    Intent takeAwayIntent = new Intent(this, RestaurantActi.class);
+////                    takeAwayIntent.putExtra(Constants.FROM_WHICH, getString(R.string.take_away));
+////                    startActivity(takeAwayIntent);
+////                    return true;
+//                case R.id.nav_check_in:
+//                    // Check-In: open ChecoutScanActi
+//                    Intent checkInIntent = new Intent(this, ChecoutScanActi.class);
+//                    startActivity(checkInIntent);
+//                    return true;
+//            }
+//            return false;
+//        });
     }
     @Override
     protected void onResume() {
         super.onResume();
         if (isHomeLoad)
             checkNotificationData();
-           callGetBalanceApi();
+        callGetBalanceApi();
 //        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, new IntentFilter(Constants.LOCAL_INTENT_ORDER_CANCELED));
     }
     @Override

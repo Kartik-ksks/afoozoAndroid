@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dine_in"
+        android:icon="@drawable/ic_dine_in"
+        android:title="Dine In" />
+    <item
+        android:id="@+id/nav_delivery"
+        android:icon="@drawable/ic_delivery"
+        android:title="Delivery" />
+<!--    <item-->
+<!--        android:id="@+id/nav_take_away"-->
+<!--        android:icon="@drawable/ic_delivery"-->
+<!--        android:title="Take Away" />-->
+    <item
+        android:id="@+id/nav_check_in"
+        android:icon="@drawable/ic_check_in"
+        android:title="Check-In" />
+</menu>

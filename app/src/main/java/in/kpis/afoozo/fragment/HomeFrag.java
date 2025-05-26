@@ -45,6 +45,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.kpis.afoozo.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import in.kpis.afoozo.AppInitialization;
 import in.kpis.afoozo.activity.AddItemsActi;
@@ -180,58 +181,58 @@ public class HomeFrag extends Fragment implements BaseSliderView.OnSliderClickLi
         custom_indicator_home = (PagerIndicator) view.findViewById(R.id.custom_indicator_home);
         custom_indicator_bottom = (PagerIndicator) view.findViewById(R.id.custom_indicator_bottom);
 
-        binding.rvCategory.setLayoutManager(new GridLayoutManager(mContext, 3));
-        binding.rvCategory.setItemAnimator(new DefaultItemAnimator());
-//        binding.rvCategory.addItemDecoration(new GridDividerDecoration(mContext));
-        binding.rvCategory.setNestedScrollingEnabled(false);
+//        binding.rvCategory.setLayoutManager(new GridLayoutManager(mContext, 3));
+//        binding.rvCategory.setItemAnimator(new DefaultItemAnimator());
+////        binding.rvCategory.addItemDecoration(new GridDividerDecoration(mContext));
+//        binding.rvCategory.setNestedScrollingEnabled(false);
 
         binding.rvPopular.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
         binding.rvPopular.setItemAnimator(new DefaultItemAnimator());
         binding.rvPopular.setNestedScrollingEnabled(false);
 
-        binding.rvDelivery.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
-        binding.rvDelivery.setItemAnimator(new DefaultItemAnimator());
-        binding.rvDelivery.setNestedScrollingEnabled(false);
-        binding.rvDelivery.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent intent = new Intent(mContext, AddressActi.class);
-                intent.putExtra(Constants.IS_FROM_CART, true);
-                intent.putExtra(Constants.FROM_WHICH, getString(R.string.delivery));
-                intent.putExtra(Constants.TITLE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getTitle());
-                intent.putExtra(Constants.IS_OPEN, topSellingBean.getHomeDeliveryTopSellingItem().get(position).isRestaurantOpen());
-                intent.putExtra(Constants.RESTAURANT_ID, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getRestaurantUuid());
-                intent.putExtra(Constants.TAKEAWAY_MIN_ORDER_VALUE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getTakeAwayMinimumOrderAmount());
-                intent.putExtra(Constants.DELIVERY_MIN_ORDER_VALUE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getDeliveryMinimumOrderAmount());
-                startActivityForResult(intent, ADDRESS_REQUEST);
-            }
-        }));
-
-        binding.rvDineIn.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
-        binding.rvDineIn.setItemAnimator(new DefaultItemAnimator());
-        binding.rvDineIn.setNestedScrollingEnabled(false);
-        binding.rvDineIn.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent intent = new Intent(mContext, ScanQrActi.class);
-                intent.putExtra(Constants.IS_FROM_CART, true);
-                intent.putExtra(Constants.FROM_WHICH, getString(R.string.dine_in));
-                intent.putExtra(Constants.TITLE, topSellingBean.getDineInTopSellingItem().get(position).getTitle());
-                intent.putExtra(Constants.RESTAURANT_ID, topSellingBean.getDineInTopSellingItem().get(position).getRestaurantUuid());
-                startActivityForResult(intent, ADDRESS_REQUEST);
-            }
-        }));
-
-
-        binding.rvPickup.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
-        binding.rvPickup.setItemAnimator(new DefaultItemAnimator());
-        binding.rvPickup.setNestedScrollingEnabled(false);
-        binding.rvPickup.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                goToAddItemsScreen(getString(R.string.take_away), topSellingBean.getTakeAwayTopSellingItem().get(position).getRestaurantUuid(), topSellingBean.getTakeAwayTopSellingItem().get(position).isRestaurantOpen(), topSellingBean.getTakeAwayTopSellingItem().get(position).getTitle(), topSellingBean.getTakeAwayTopSellingItem().get(position).getTakeAwayMinimumOrderAmount(), topSellingBean.getTakeAwayTopSellingItem().get(position).getDeliveryMinimumOrderAmount());
-            }
-        }));
+//        binding.rvDelivery.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
+//        binding.rvDelivery.setItemAnimator(new DefaultItemAnimator());
+//        binding.rvDelivery.setNestedScrollingEnabled(false);
+//        binding.rvDelivery.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Intent intent = new Intent(mContext, AddressActi.class);
+//                intent.putExtra(Constants.IS_FROM_CART, true);
+//                intent.putExtra(Constants.FROM_WHICH, getString(R.string.delivery));
+//                intent.putExtra(Constants.TITLE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getTitle());
+//                intent.putExtra(Constants.IS_OPEN, topSellingBean.getHomeDeliveryTopSellingItem().get(position).isRestaurantOpen());
+//                intent.putExtra(Constants.RESTAURANT_ID, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getRestaurantUuid());
+//                intent.putExtra(Constants.TAKEAWAY_MIN_ORDER_VALUE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getTakeAwayMinimumOrderAmount());
+//                intent.putExtra(Constants.DELIVERY_MIN_ORDER_VALUE, topSellingBean.getHomeDeliveryTopSellingItem().get(position).getDeliveryMinimumOrderAmount());
+//                startActivityForResult(intent, ADDRESS_REQUEST);
+//            }
+//        }));
+//
+//        binding.rvDineIn.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
+//        binding.rvDineIn.setItemAnimator(new DefaultItemAnimator());
+//        binding.rvDineIn.setNestedScrollingEnabled(false);
+//        binding.rvDineIn.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Intent intent = new Intent(mContext, ScanQrActi.class);
+//                intent.putExtra(Constants.IS_FROM_CART, true);
+//                intent.putExtra(Constants.FROM_WHICH, getString(R.string.dine_in));
+//                intent.putExtra(Constants.TITLE, topSellingBean.getDineInTopSellingItem().get(position).getTitle());
+//                intent.putExtra(Constants.RESTAURANT_ID, topSellingBean.getDineInTopSellingItem().get(position).getRestaurantUuid());
+//                startActivityForResult(intent, ADDRESS_REQUEST);
+//            }
+//        }));
+//
+//
+//        binding.rvPickup.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
+//        binding.rvPickup.setItemAnimator(new DefaultItemAnimator());
+//        binding.rvPickup.setNestedScrollingEnabled(false);
+//        binding.rvPickup.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                goToAddItemsScreen(getString(R.string.take_away), topSellingBean.getTakeAwayTopSellingItem().get(position).getRestaurantUuid(), topSellingBean.getTakeAwayTopSellingItem().get(position).isRestaurantOpen(), topSellingBean.getTakeAwayTopSellingItem().get(position).getTitle(), topSellingBean.getTakeAwayTopSellingItem().get(position).getTakeAwayMinimumOrderAmount(), topSellingBean.getTakeAwayTopSellingItem().get(position).getDeliveryMinimumOrderAmount());
+//            }
+//        }));
 
         if (categoryList != null && categoryList.size() > 0)
             categoryList.clear();
@@ -274,19 +275,46 @@ public class HomeFrag extends Fragment implements BaseSliderView.OnSliderClickLi
         }));
         binding.tabDots.setupWithViewPager(binding.pager, true);
 
-        binding.llcheckIn.setOnClickListener(v -> Utils.startActivity(mContext, ChecoutScanActi.class));
+//        binding.llcheckIn.setOnClickListener(v -> Utils.startActivity(mContext, ChecoutScanActi.class));
         binding.llCafe.setOnClickListener(v -> {
-            Utils.SingleClickCleverTapEvent("Dashboard Cafe Clicked");
+            Utils.SingleClickCleverTapEvent("Scan to order Clicked");
             Intent intent = new Intent(mContext, DineInActi.class);
             intent.putExtra(Constants.FROM_WHICH, getString(R.string.cafe));
             startActivity(intent);
         });
 
-        makeCategoryList();
+//        makeCategoryList();
 //        makePopularList();
 
         Utils.progressDialog(mContext, "");
         enableGps();
+
+        BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_dine_in:
+                    Intent dineInIntent = new Intent(getActivity(), DineInActi.class);
+                    dineInIntent.putExtra(Constants.FROM_WHICH, getString(R.string.dine_in));
+                    startActivity(dineInIntent);
+                    return true;
+                case R.id.nav_delivery:
+                    goToDeliveryRestaurantScreen(getString(R.string.delivery));
+//                    deliveryIntent.putExtra(Constants.IS_FROM_CART, true);
+//                    deliveryIntent.putExtra(Constants.FROM_WHICH, getString(R.string.delivery));
+//                    startActivity(deliveryIntent);
+                    return true;
+//                case R.id.nav_take_away:
+//                    Intent takeAwayIntent = new Intent(getActivity(), RestaurantActi.class);
+//                    takeAwayIntent.putExtra(Constants.FROM_WHICH, getString(R.string.take_away));
+//                    startActivity(takeAwayIntent);
+//                    return true;
+                case R.id.nav_check_in:
+                    Intent checkInIntent = new Intent(getActivity(), ChecoutScanActi.class);
+                    startActivity(checkInIntent);
+                    return true;
+            }
+            return false;
+        });
     }
 
     private void enableGps() {
@@ -560,26 +588,27 @@ public class HomeFrag extends Fragment implements BaseSliderView.OnSliderClickLi
         if (topSellingBean != null) {
             if (topSellingBean.getDineInTopSellingItem() != null && topSellingBean.getDineInTopSellingItem().size() > 0) {
                 TopSellingAdapter dineInAdapter = new TopSellingAdapter(mContext, topSellingBean.getDineInTopSellingItem());
-                binding.rvDineIn.setAdapter(dineInAdapter);
+//                binding.rvDineIn.setAdapter(dineInAdapter);
                 dineInAdapter.notifyDataSetChanged();
-                binding.llDineIn.setVisibility(View.VISIBLE);
-                binding.txtTopDineIn.setText(topSellingBean.getDineInTitle());
+//                binding.llDineIn.setVisibility(View.VISIBLE);
+//                binding.txtTopDineIn.setText(topSellingBean.getDineInTitle());
             }
 
             if (topSellingBean.getHomeDeliveryTopSellingItem() != null && topSellingBean.getHomeDeliveryTopSellingItem().size() > 0) {
                 TopSellingAdapter deliveryAdapter = new TopSellingAdapter(mContext, topSellingBean.getHomeDeliveryTopSellingItem());
-                binding.rvDelivery.setAdapter(deliveryAdapter);
+//                binding.rvDelivery.setAdapter(deliveryAdapter);
                 deliveryAdapter.notifyDataSetChanged();
-                binding.llDelivery.setVisibility(View.VISIBLE);
-                binding.txtTopDelivery.setText(topSellingBean.getHomeDeliveryTitle());
+//                binding.llDelivery.setVisibility(View.VISIBLE);
+//                binding.txtTopDelivery.setText(topSellingBean.getHomeDeliveryTitle());
             }
 
             if (topSellingBean.getTakeAwayTopSellingItem() != null && topSellingBean.getTakeAwayTopSellingItem().size() > 0) {
                 TopSellingAdapter pickupAdapter = new TopSellingAdapter(mContext, topSellingBean.getTakeAwayTopSellingItem());
-                binding.rvPickup.setAdapter(pickupAdapter);
+//                binding.rvPickup.setAdapter(pickupAdapter);
                 pickupAdapter.notifyDataSetChanged();
-                binding.llPickup.setVisibility(View.VISIBLE);
-                binding.txtTopPickup.setText(topSellingBean.getTakeAwayTitle());
+//                binding.llPickup
+//                .setVisibility(View.VISIBLE);
+//                binding.txtTopPickup.setText(topSellingBean.getTakeAwayTitle());
             }
         }
         try {

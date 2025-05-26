@@ -482,7 +482,7 @@
     <string name="room_flatno">Room No./FlatNo.</string>
     <string name="building_name">Building Name</string>
     <string name="error_bulding_name_blank">Building Name Should Not Blank.</string>
-    <string name="the_work_cafe">The Work Café</string>
+    <string name="the_work_cafe">Scan to Order</string>
     <string name="where_we_can_find_it">Where we can find it?</string>
     <string name="scan_at_cafe_help_disk">1. Scan at the cafe help desk</string>
     <string name="walk_to_the_cafeteria">Walk to the cafeteria</string>

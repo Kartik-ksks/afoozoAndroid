@@ -319,7 +319,7 @@ public class SplashActi extends AppCompatActivity implements View.OnClickListene
     }
 
     private void thread() {
-        setImageAndTon();
+//        setImageAndTon();
         new Thread(() -> {
             try {
                 Thread.sleep(3000);
